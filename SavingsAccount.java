@@ -1,23 +1,18 @@
-package tema10;
+package tema19;
 
-public class SavingsAccount {
-	public double balance;
-	public double interestRate;
-	public String name;
-	
-	public void deposit(double sum) {
-		balance += sum;
-		System.out.println("Successful deposit " + sum + " new balance " + balance);
+public class SavingsAccount extends Account19{
+
+	public SavingsAccount (int id, double balance){
+		super(id, balance);
 	}
-	
-	public void withdraw( double sum) {
-		if(sum < 0 || sum > balance) {
-			System.out.println("Error");
-			return;
+	public void withdraw(double draw) {
+		if(balance >= draw) {
+    	balance -= draw;
 		}
-		balance -= sum;
-		System.out.println("Successful withdraw " + sum + " new balance " + balance);
-	}
-
+    }
+	
+	public String toString() {
+    	return super.toString() + "Savings account";
+    }
 
 }
